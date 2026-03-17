@@ -13,7 +13,7 @@
   "diagnostic.enableMessage": "always",
   "diagnostic.messageTarget": "float",
   "diagnostic.format": "[%severity] %message %source%code",
-  "coc.preferences.extensionUpdateCheck": "weekly",
+  "extensions.updateCheck": "weekly",
   "coc.preferences.formatOnSave": true,
   "coc.preferences.jumpCommand": "drop",
   "signature.hideOnTextChange": true,
@@ -54,14 +54,7 @@
     "go": {
       "command": "gopls",
       "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"],
-      "initializationOptions": {
-        "usePlaceholders": true,
-        "completeUnimported": true,
-        "staticcheck": false,
-        "matcher": "fuzzy",
-        "experimentalWorkspaceModule": false
-      }
+      "filetypes": ["go"]
     },
     "jsonnet": {
       "command": "jsonnet-language-server",
@@ -75,7 +68,7 @@
   "notification.border": true,
   "dialog.rounded": true,
   "list.smartCase": false,
-  "list.maxHeight": 15,
+  "list.maxPreviewHeight": 15,
   "dialog.confirmKey": "<cr>",
   "hover.target": "float",
 
@@ -102,5 +95,8 @@
   "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/18.1.3/clangd_18.1.3/bin/clangd",
   "tailwindCSS.suggestions": true,
   "snippets.ultisnips.pythonPrompt": false,
-  "coc.source.vimtex.filetypes": ["tex", "plaintex"]
+  "coc.source.vimtex.filetypes": ["tex", "plaintex"],
+  "eslint.run": "onSave",
+  "eslint.format.enable": true,
+  "rust-analyzer.lens.enable": false
 }

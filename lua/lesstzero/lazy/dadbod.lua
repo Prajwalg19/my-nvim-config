@@ -1,9 +1,10 @@
 return {
     'kristijanhusak/vim-dadbod-ui',
     dependencies = {
-        { 'tpope/vim-dadbod',                     lazy = true },
+        { 'tpope/vim-dadbod',ft = { 'sql', 'mysql', 'plsql' },lazy = true },
         { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
     },
+    --
     -- keys = {
     --     { "<M-s>", ":DBUIToggle<CR>", desc = "toggle the undoree" },
     -- },

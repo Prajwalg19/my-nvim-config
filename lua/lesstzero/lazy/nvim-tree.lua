@@ -2,7 +2,7 @@ return {
     "nvim-tree/nvim-tree.lua",
     lazy = false,
     -- event="VeryLazy",
-    dependencies ={
+    dependencies = {
         'stevearc/dressing.nvim',
     },
     config = function()
