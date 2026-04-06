@@ -27,6 +27,10 @@ return {
 				css = { "prettierd" },
 				lua = { "stylua" },
 			},
+			format_on_save = {
+				timeout_ms = 500,
+				lsp_fallback = true,
+			},
 		})
 
 		local cmp = require("cmp")
@@ -89,7 +93,7 @@ return {
 					})
 				end,
                 ['tailwindcss'] = function ()
-					require("lspconfig").svelte.setup({
+					require("lspconfig").tailwindcss.setup({
 						capabilities = capabilities
                     })
                 end,
@@ -97,7 +101,17 @@ return {
 				["ts_ls"] = function()
 					require("lspconfig").ts_ls.setup({
 						capabilities = capabilities,
-						root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", ".git"),
+						root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+                        init_options = {
+                            maxTsServerMemory = 2048,
+                        },
+                        settings = {
+                            typescript = {
+                                tsserver = {
+                                    maxTsServerMemory = 2048,
+                                },
+                            },
+                        },
 					})
 				end,
 
@@ -130,7 +144,7 @@ return {
 
 		vim.diagnostic.config({
 			float = {
-				focusable = false,
+				focusable = true,
 				style = "minimal",
 				border = "rounded",
 				source = "always",

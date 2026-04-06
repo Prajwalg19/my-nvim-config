@@ -50,7 +50,8 @@ autocmd({ "BufWritePre" }, {
 autocmd("CursorHold", {
     callback = function()
         vim.diagnostic.open_float(nil, {
-            focusable = false,
+            focusable = true,
+            focus = false,
             border = "rounded",
             source = "always",
             prefix = "",
